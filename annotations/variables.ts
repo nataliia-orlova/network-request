@@ -9,7 +9,7 @@ let nothing: undefined = undefined;
 
 let now: Date = new Date();
 
-//  array
+//  arrays
 //  says we are going to have an array of strings
 let colors: string[] = ['red', 'green', 'blue']
 
@@ -38,8 +38,30 @@ const logNumber:(i: number) => void = (i: number)=> {
 //  define what type of data goes into function as arguments 
 //  and after => say what this function is going to return
 
-//  when to use annotations
+
+//  WHEN TO USE ANNOTATIONS
 //  1) function that returns any type
 const json = '{"x":10, "y": 20}';
 const coordinates: {x: number; y: number} = JSON.parse(json);
 console.log(coordinates)
+
+//  2) when declare and initialize variable not at the same time - not on the same line
+let words = ['red', 'green', 'blue']
+let foundWord: boolean;
+
+for(let i = 0; i < words.length; i++) {
+    if (words[i]==='green') {
+        foundWord = true;
+    }
+}
+
+//  3) variable whoose type can not be infered correctly
+
+let numbers = [-10, 23, -44, 54];
+let numberAboveZero: boolean | number = false;
+
+for (let i = 0; i < numbers.length; i++){
+    if(numbers[i] > 0) {
+        numberAboveZero = numbers[i]
+    }
+}
