@@ -40,6 +40,8 @@ const logNumber:(i: number) => void = (i: number)=> {
 
 
 //  WHEN TO USE ANNOTATIONS
+//  !! in other cases mostly you rely on TYPE INFERENCE and don't do TYPE ANNOTATIONS  !!
+
 //  1) function that returns any type
 const json = '{"x":10, "y": 20}';
 const coordinates: {x: number; y: number} = JSON.parse(json);
@@ -65,3 +67,5 @@ for (let i = 0; i < numbers.length; i++){
         numberAboveZero = numbers[i]
     }
 }
+
+
